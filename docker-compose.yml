@@ -1,0 +1,12 @@
+version: '2'
+services:
+  pulseaudio:
+    build: .
+    container_name: pulseaudio
+    restart: always
+    volumes:
+      - $PWD/conf:/etc/pulse
+    devices:
+      - /dev/snd
+    ports:
+      - 4713:4713
